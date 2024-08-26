@@ -71,18 +71,25 @@ btnPlay.addEventListener('click', function (){
 
     //creare un evento per colorare 
     square.addEventListener('click', function(){
-    square.classList.add('clicked');
-    
-    //Se è gièa statto cliccato non sommare punteggio;
-    //!if(square.classList.contains('clicked')) return;
-       
-    //stampiamo il numero della cella cliccata in console
+    //Stampo in console
     console.log(i + 1);
 
-    //incrementiamo il punteggio
-    scoreElement.innerText = ++score;
-    })
+    //Se è gièa statto cliccato non sommare punteggio;
+    //!if(square.classList.contains('clicked')) return;    //TODO non funziona! :(
 
+    //verifichiamo se ha calpestato una bomba
+    if(bombs.includes(parseInt(i + 1))){
+        square.classList.add('bomb')
+        console.log(`Hai perso! Hai fatto ${score} punti.`);
+        alert(`Hai perso! Hai fatto ${score} punti.`);
+     }else{
+        //Colore con il click
+        square.classList.add('clicked');
+
+        //incrementiamo il punteggio
+        scoreElement.innerText = ++score;
+     }
+    })
     //Stampo
     grid.appendChild(square); 
    }
