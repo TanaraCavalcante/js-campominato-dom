@@ -21,12 +21,12 @@ body{
 }
 
 header{
-    height: 80px;
+    height: 12vh;
     justify-content: space-between;
 }
 
 footer{
-    height: 60px;
+    height: 5vh;
 }
 
 button{
@@ -34,8 +34,8 @@ button{
 }
 
 #grid{
-    width: 500px;
-    height: 500px;
+    width: 70vh;
+    height: 70vh;
     margin: 30px;
     display: flex;
     flex-wrap: wrap;
