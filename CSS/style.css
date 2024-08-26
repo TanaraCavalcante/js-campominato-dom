@@ -10,7 +10,6 @@ body{
 
 .container{
     width: 700px;
-    margin: 0 auto;
 }
 
 .style-section{
@@ -36,8 +35,10 @@ button{
 #grid{
     width: 70vh;
     height: 70vh;
-    margin: 30px;
+    margin: 30px auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
