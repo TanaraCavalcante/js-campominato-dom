@@ -32,6 +32,15 @@ function createCell(content){
     cell.append(content);
     return cell;
 }
+//Creare una array con numeri Random per mettere le bomb
+function generateBomb(totCels, totBombs){
+  const bombs = [];
+  while(bombs.length < totBombs){
+    const randomNumbers = Math.floor(Math.random() * totCels)+ 1; 
+    bombs.push(randomNumbers);
+  }
+  return bombs;
+}
 
 //TODO  Elaborazione
 //Creare l'evento per apparire la cella
@@ -43,6 +52,12 @@ btnPlay.addEventListener('click', function (){
 
     //Punteggio e bomb
     let score = 0;
+    let totBombs = 16;
+    const maxScore = totCells - totBombs;
+
+    //Creo le bombe
+    const bombs = generateBomb(totCells, totBombs);
+    console.log(bombs);
 
     //Svuoto la griglia
     grid.innerHTML = '';
