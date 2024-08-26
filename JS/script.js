@@ -20,7 +20,8 @@ Quando la partita termina dobbiamo capire se è terminata perchè è stata clicc
 
 //TODO    Ricupera gli ellementi dal DOM
 const btnPlay = document.getElementById('play');
-const grid = document.getElementById('grid')
+const grid = document.getElementById('grid');
+const scoreElement = document.getElementById('punti');
 
 
 //TODO    Funzioni
@@ -32,14 +33,19 @@ function createCell(content){
     return cell;
 }
 
-//Dimensioni della cella
-const rolws = 10;
-const cols = 10;
-const totCells = rolws * cols;
+
 
 //TODO  Elaborazione
 //Creare l'evento per apparire la cella
 btnPlay.addEventListener('click', function (){
+    //Dimensioni della cella
+    const rolws = 10;
+    const cols = 10;
+    const totCells = rolws * cols;
+
+    //Punteggio e bomb
+    let score = 0;
+
     //Svuoto la griglia
     grid.innerHTML = '';
     
@@ -52,11 +58,15 @@ btnPlay.addEventListener('click', function (){
 
     //creare un evento per colorare 
     square.addEventListener('click', function(){
-    square.classList.add('clicked');
+    square.classList.toggle('clicked');      //!se vc reclicar ele tira a cor
 
     //stampiamo il numero della cella cliccata in console
     console.log(i + 1);
+
+    //incrementiamo il punteggio
+    scoreElement.innerText = ++score;
     })
+
     //Stampo
     grid.appendChild(square); 
    }
