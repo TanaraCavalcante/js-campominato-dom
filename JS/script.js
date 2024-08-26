@@ -37,7 +37,7 @@ function generateBomb(totCels, totBombs){
   const bombs = [];
   while(bombs.length < totBombs){
     const randomNumbers = Math.floor(Math.random() * totCels)+ 1; 
-    bombs.push(randomNumbers);
+    if(!bombs.includes(randomNumbers)) bombs.push(randomNumbers);
   }
   return bombs;
 }
