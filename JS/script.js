@@ -74,12 +74,12 @@ btnPlay.addEventListener('click', function (){
     //Stampo in console
     console.log(i + 1);
 
-    //Se è gièa statto cliccato non sommare punteggio;
-    //!if(square.classList.contains('clicked')) return;    //TODO non funziona! :(
+    //Se è già statto cliccato, non sommare punteggio!
+    if(square.classList.contains('clicked')) return; 
 
     //verifichiamo se ha calpestato una bomba
     if(bombs.includes(parseInt(i + 1))){
-        square.classList.add('bomb')
+        square.classList.add('bomb');
         console.log(`Hai perso! Hai fatto ${score} punti.`);
         alert(`Hai perso! Hai fatto ${score} punti.`);
      }else{
